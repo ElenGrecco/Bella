@@ -3,7 +3,7 @@ const holes = [...document.querySelectorAll('.hole')];
 const scoreEl = document.querySelector('.score span');
 let score = 0;
 
-const sound = new Audio("assets/smash.mp3"); // Corrigido o caminho para o arquivo de áudio
+const sound = new Audio("img/smash.mp3"); // Corrigido o caminho para o arquivo de áudio
 
 function run() {
     const i = Math.floor(Math.random() * holes.length); // Corrigido o 'math' para 'Math' e o 'lenght' para 'length'
@@ -12,13 +12,13 @@ function run() {
 
     const img = document.createElement('img');
     img.classList.add('mole');
-    img.src = 'assets/mole.png'; // Corrigido o caminho para a imagem da "mole"
+    img.src = 'img/mole.png'; // Corrigido o caminho para a imagem da "mole"
 
     img.addEventListener('click', () => { // Corrigido o 'Image' para 'img'
         score += 10;
         sound.play();
         scoreEl.textContent = score;
-        img.src = 'assets/mole-whacked.png'; // Corrigido o 'scr' para 'src'
+        img.src = 'img/mole-whacked.png'; // Corrigido o 'scr' para 'src'
         clearTimeout(timer);
         setTimeout(() => {
             hole.removeChild(img);
@@ -27,6 +27,7 @@ function run() {
     });
 
     hole.appendChild(img);
+    
 
     timer = setTimeout(() => {
         hole.removeChild(img);
@@ -39,6 +40,7 @@ run();
 window.addEventListener('mousemove', e => {
     cursor.style.top = e.pageY + 'px';
     cursor.style.left = e.pageX + 'px';
+    
 });
 
 window.addEventListener('mousedown', () => {
