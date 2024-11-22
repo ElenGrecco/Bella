@@ -29,6 +29,7 @@ display: grid;
 grid-template-columns: repeat(3, 1fr); /* Corrigido 1 fr para 1fr */
 grid-template-rows: repeat(3, 1fr);    /* Corrigido 1 fr para 1fr */
 gap: 80px;
+margin: 0 auto;
 }
 
 .hole {
@@ -74,4 +75,8 @@ pointer-events: none;
 
 .cursor.active {
 transform: translate(-20%, -20%) rotate(-45deg);
+}
+
+h1{
+	text-align: center;
 }
